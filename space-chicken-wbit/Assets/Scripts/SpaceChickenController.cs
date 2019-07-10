@@ -7,7 +7,7 @@ public class SpaceChickenController : MonoBehaviour
     public float speed;
     private Rigidbody2D rb2d;
     private bool isOver = false;
-    
+
     // Start is called before the first frame update
     void Start()
     {
