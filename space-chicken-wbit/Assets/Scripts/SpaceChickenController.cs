@@ -22,7 +22,6 @@ public class SpaceChickenController : MonoBehaviour
         float moveHorizontal = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
         float moveVertical = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
         transform.position = new Vector2(transform.position.x + moveHorizontal, transform.position.y + moveVertical);
-      
         }
     }
 }
