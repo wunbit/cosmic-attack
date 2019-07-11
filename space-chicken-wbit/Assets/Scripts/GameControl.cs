@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour
 {
     public static GameControl instance;
-    public float scrollSpeed = -2f;
+    public float BGScrollSpeed = -2f;
+    public float CharacterSpeed = 5;
+    //public float savesInitialDelay;
+    //public float savesRepeatDelay;
+    public float asteroid_initialDelay;
+    public float asteroid_repeatDelay;
 
     // Start is called before the first frame update
     void Awake()

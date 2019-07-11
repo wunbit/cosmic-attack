@@ -12,10 +12,11 @@ public class BackgroundRepeater : MonoBehaviour
     {
         groundHorizonHeight = GetComponent<SpriteRenderer>().size.y;
         rb2dbground = GetComponent<Rigidbody2D> ();
-        rb2dbground.velocity = new Vector2(0, GameControl.instance.scrollSpeed);
+        rb2dbground.velocity = new Vector2(0, GameControl.instance.BGScrollSpeed);
     }
 
-    // Update is called once per frame
+     // Update is called once per frame
+
     void Update()
     {
         if (transform.position.y < -groundHorizonHeight) 

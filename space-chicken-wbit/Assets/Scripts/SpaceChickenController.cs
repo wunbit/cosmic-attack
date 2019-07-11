@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpaceChickenController : MonoBehaviour
 {
-    public float speed;
     private Rigidbody2D rb2d;
     private bool isOver = false;
 
@@ -19,8 +18,8 @@ public class SpaceChickenController : MonoBehaviour
     {
         if (isOver == false)
         {
-        float moveHorizontal = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
-        float moveVertical = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
+        float moveHorizontal = Input.GetAxis ("Horizontal") * GameControl.instance.CharacterSpeed * Time.deltaTime;
+        float moveVertical = Input.GetAxis ("Vertical") * GameControl.instance.CharacterSpeed * Time.deltaTime;
         transform.position = new Vector2(transform.position.x + moveHorizontal, transform.position.y + moveVertical);
         }
     }
