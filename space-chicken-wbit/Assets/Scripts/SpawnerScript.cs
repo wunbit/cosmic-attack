@@ -6,6 +6,7 @@ public class SpawnerScript : MonoBehaviour
 {
     //public GameObject savesInstance;
     public GameObject asteroidInstance;
+    public GameObject AmmoInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -14,16 +15,17 @@ public class SpawnerScript : MonoBehaviour
     }
     public void StartSpawning()
     {
+        InvokeRepeating("spawnAmmo", GameControl.instance.AmmoInitialDelay, Random.Range(GameControl.instance.AmmoMinRepeat, GameControl.instance.AmmoMaxRepeat));
         InvokeRepeating("spawnAsteroid", GameControl.instance.asteroid_initialDelay, Random.Range(GameControl.instance.asteroidMinRepeat, GameControl.instance.asteroidMaxRepeat));
     }
     public void StopSpawning()
     {
         CancelInvoke();
     }
-    /*void spawnSave()
+    void spawnAmmo()
     {
-        Instantiate(savesInstance, transform.position, Quaternion.identity);
-    } */
+        Instantiate(AmmoInstance, transform.position, Quaternion.identity);
+    } 
     void spawnAsteroid()
     {
         Instantiate(asteroidInstance, transform.position, Quaternion.identity);
