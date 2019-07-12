@@ -14,7 +14,7 @@ public class SpawnerScript : MonoBehaviour
     }
     public void StartSpawning()
     {
-        InvokeRepeating("spawnAsteroid", GameControl.instance.asteroid_initialDelay, GameControl.instance.asteroid_repeatDelay);
+        InvokeRepeating("spawnAsteroid", GameControl.instance.asteroid_initialDelay, Random.Range(GameControl.instance.asteroidMinRepeat, GameControl.instance.asteroidMaxRepeat));
     }
     public void StopSpawning()
     {

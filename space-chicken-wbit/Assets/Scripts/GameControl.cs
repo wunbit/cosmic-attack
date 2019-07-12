@@ -11,7 +11,9 @@ public class GameControl : MonoBehaviour
     //public float savesInitialDelay;
     //public float savesRepeatDelay;
     public float asteroid_initialDelay;
-    public float asteroid_repeatDelay;
+    public float asteroidMinRepeat;
+    public float asteroidMaxRepeat;
+    public Vector2 AsteroidDirection = new Vector2(1f, 0f);
 
     // Start is called before the first frame update
     void Awake()

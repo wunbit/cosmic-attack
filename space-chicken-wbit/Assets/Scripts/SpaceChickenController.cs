@@ -18,6 +18,7 @@ public class SpaceChickenController : MonoBehaviour
     {
         if (isOver == false)
         {
+        rb2d.velocity = Vector2.zero;
         float moveHorizontal = Input.GetAxis ("Horizontal") * GameControl.instance.CharacterSpeed * Time.deltaTime;
         float moveVertical = Input.GetAxis ("Vertical") * GameControl.instance.CharacterSpeed * Time.deltaTime;
         transform.position = new Vector2(transform.position.x + moveHorizontal, transform.position.y + moveVertical);
