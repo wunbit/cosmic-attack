@@ -11,7 +11,10 @@ public class SpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         StartSpawning();
+        if (GameObject.Find("GameControl") == null)
+        {
+            StartSpawning();
+        }
     }
     public void StartSpawning()
     {
