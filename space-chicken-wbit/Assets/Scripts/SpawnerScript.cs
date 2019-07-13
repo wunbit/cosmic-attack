@@ -28,7 +28,7 @@ public class SpawnerScript : MonoBehaviour
     void spawnAmmo()
     {
         Instantiate(AmmoInstance, transform.position, Quaternion.identity);
-    } 
+    }
     void spawnAsteroid()
     {
         Instantiate(asteroidInstance, transform.position, Quaternion.identity);

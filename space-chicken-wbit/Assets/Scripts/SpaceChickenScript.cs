@@ -6,7 +6,6 @@ using UnityEngine;
 public class SpaceChickenScript : MonoBehaviour
 {
     public int score;
-
     //When we hit any object that has a 2D collider...)
     void OnTriggerEnter2D(Collider2D coll)
     {
@@ -29,17 +28,17 @@ public class SpaceChickenScript : MonoBehaviour
             //the object we collided with, make it inactive
             coll.gameObject.SetActive(false);
             //Add a point to our score
-            score = score + 1;
+            score++;
             //Update the GUI text
             GameControl.instance.scoreText.text = "Score: " + score;
             //If score is greater or equal to 3, and there isn't already a boss...)
-            if (score >= 3 && GameControl.instance.noboss == true)
-            {
+           // if (score >= 3 && GameControl.instance.noboss == true)
+          //  {
                 //Activate the boss
-                GameControl.instance.boss.SetActive(true);
+           //     GameControl.instance.boss.SetActive(true);
                 //change noboss off so another boss isn't created
-                GameControl.instance.noboss = false;
-            }
+           //     GameControl.instance.noboss = false;
+           // }
         }
 
     }

@@ -11,6 +11,7 @@ public class GameControl : MonoBehaviour
     public bool noboss = true;
     public float BGScrollSpeed = -2f;
     public float CharacterSpeed = 5;
+    public Vector2 LaserDirection = new Vector2 (0, 5f);
     public float AmmoInitialDelay;
     public float AmmoMinRepeat;
     public float AmmoMaxRepeat;
@@ -28,7 +29,7 @@ public class GameControl : MonoBehaviour
     public GameObject WinCard;
     public SpaceChickenScript spaceChicken;
     public GameObject HealthBar;
-    public GameObject boss;
+    //public GameObject boss;
     public GameObject gameover;
     public GameObject ChickenBoom;
     public Text scoreText;
@@ -72,7 +73,7 @@ private void StartGame()
         {
             WinCard.SetActive(false);
         }
-        boss.SetActive(false);
+        //boss.SetActive(false);
         noboss = true;
         if(HealthBar)
         {

@@ -5,7 +5,9 @@ using UnityEngine;
 public class AsteroidController : MonoBehaviour
 {
    	public bool relativeToRotation = false;
-       private Rigidbody2D rb2d;
+    public GameObject boom;
+    public AudioClip boomAsteroidSoud;
+    private Rigidbody2D rb2d;
 
     void Start ()
     {
@@ -24,5 +26,19 @@ public class AsteroidController : MonoBehaviour
 		{
 			rb2d.AddForce(GameControl.instance.AsteroidDirection * 2f);
 		}
+    }
+     void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Laser")
+        {
+            Instantiate(boom, this.transform.position, Quaternion.identity);
+            if(boomAsteroidSoud)
+            {
+                AudioSource.PlayClipAtPoint(boomAsteroidSoud, new Vector3(0, 0, 0));
+            }
+
+            coll.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
     }
 }
