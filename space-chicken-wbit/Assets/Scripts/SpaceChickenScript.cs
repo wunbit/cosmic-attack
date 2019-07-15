@@ -7,6 +7,7 @@ public class SpaceChickenScript : MonoBehaviour
 {
     public int score;
     public GameObject boss;
+    public GameObject ChickenBoom;
     public GameObject spline;
     //When we hit any object that has a 2D collider...)
     void OnTriggerEnter2D(Collider2D coll)
@@ -14,8 +15,16 @@ public class SpaceChickenScript : MonoBehaviour
         //If the object we collided with has a tag of "Enemy")
         if (coll.gameObject.tag == "Enemy")
         {
+            if (GameControl.instance.playerHit)
+            {
+                AudioSource.PlayClipAtPoint(GameControl.instance.playerHit, new Vector3(0, 0, 0));
+            }
             print("You hit an enemy!");
             GameControl.instance.PlayerIsHit();
+            if (ChickenBoom != null)
+                {
+                    Instantiate(ChickenBoom, this.transform.position, Quaternion.identity);
+                }
             gameObject.SetActive(false);
         }
         //If the object we collided with has a tag of "Pickup")
@@ -26,7 +35,7 @@ public class SpaceChickenScript : MonoBehaviour
                 AudioSource.PlayClipAtPoint(GameControl.instance.pickupSound, new Vector3(0, 0, 0));
             }
             //print only shows in the Console window, helpful to see if that section of code is running
-            print("You picked up a feather!");
+            print("You picked up ammo!");
             //the object we collided with, make it inactive
             coll.gameObject.SetActive(false);
             //Add a point to our score

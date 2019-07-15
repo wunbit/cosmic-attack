@@ -20,6 +20,7 @@ public class GameControl : MonoBehaviour
     public float asteroidMaxRepeat;
     public Vector2 AsteroidDirection = new Vector2(1f, 0f);
     public Vector2 PowerupDirection = new Vector2(0f, 5f);
+    public Vector2 BombDirection = new Vector2(0f, 5f);
 
     [Header("Script References")]
     public SpawnerScript spawner;
@@ -30,8 +31,7 @@ public class GameControl : MonoBehaviour
     public SpaceChickenScript spaceChicken;
     public GameObject HealthBar;
     public GameObject boss;
-    public GameObject gameover;
-    public GameObject ChickenBoom;
+    public BossScript bossScript;
     public Text scoreText;
     AudioSource source;
     public AudioClip bgMusic;
@@ -97,23 +97,18 @@ private void StartGame()
     public void OnGameOverCardClick()
     {
         //source.Stop();
-        StartGame();
+        SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
     }
 
     public void WinCardClick()
     {
-        StartGame();
+        SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);;
     }
 
     public void PlayerIsHit()
     {
         spawner.StopSpawning();
+        bossScript.EndInvoke();
         gameOverCard.SetActive(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

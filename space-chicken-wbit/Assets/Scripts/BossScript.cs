@@ -16,6 +16,7 @@ public class BossScript : MonoBehaviour
     public GameObject GameControl;
     public AudioClip bossHit;
     public AudioClip bossDestroyed;
+    public AudioClip winMusic;
 
     void OnEnable()
     {
@@ -46,11 +47,12 @@ public class BossScript : MonoBehaviour
                 if (bossDestroyed)
                 {
                     AudioSource.PlayClipAtPoint(bossDestroyed, new Vector3(0, 0, 0));
+                    AudioSource.PlayClipAtPoint(winMusic, new Vector3(0, 0, 0));
                 }
                 Instantiate(BoomBig, this.transform.position, Quaternion.identity);
+                DestroyBadGuys();
                 EndInvoke();
                 //Time.timeScale = 0.0f;
-                DestroyBadGuys();
                 if(GameControl)
                 {
                     GameControl.GetComponent<GameControl>().WinCard.SetActive(true);
@@ -60,6 +62,7 @@ public class BossScript : MonoBehaviour
                     SpawnerScript.GetComponent<SpawnerScript>().StopSpawning();
                 }
                 gameObject.SetActive(false);
+                EndInvoke();
                 print("BOSS GONE!");
             }
         }
@@ -67,8 +70,9 @@ public class BossScript : MonoBehaviour
 
     void DestroyBadGuys()
     {
+        print("Destroybadguys is at start");
         BadGuys = GameObject.FindGameObjectsWithTag("Enemy");
-
+        print("Badguys lenght is " + BadGuys.Length);
         for (var i = 0; i < BadGuys.Length; i++)
         {
             Destroy(BadGuys[i]);

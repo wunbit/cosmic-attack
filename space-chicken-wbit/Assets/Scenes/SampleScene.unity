@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9425269
 MonoBehaviour:
@@ -910,6 +910,7 @@ RectTransform:
   - {fileID: 9425268}
   - {fileID: 486503021}
   - {fileID: 1202672071}
+  - {fileID: 2006757044}
   - {fileID: 1328012645}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1051,7 +1052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &468314425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,17 +1065,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7f23e19571fb5418ea1160dc2bfb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 0}
-  initialDelay: 0
-  repeatDelay: 0
+  bomb: {fileID: 4118467262901841807, guid: 67e183d775e5ecd479c03530c537bae0, type: 3}
+  initialDelay: 0.2
+  repeatDelay: 0.6
   BoomLittle: {fileID: 5357748768780214047, guid: e420f6b1fb227ae438f10195c260bb81,
     type: 3}
   BoomBig: {fileID: 5713716160885435607, guid: 9bfa0149032212d4d8a7d69ec5624fbb, type: 3}
   HealthBar: {fileID: 1328012644}
   SpawnerScript: {fileID: 1836049155}
   GameControl: {fileID: 2074277280}
-  bossHit: {fileID: 0}
-  bossDestroyed: {fileID: 0}
+  bossHit: {fileID: 8300000, guid: 002bbac9a5d385e49bb98fb3bcfdfee7, type: 3}
+  bossDestroyed: {fileID: 8300000, guid: 38a2f91ea0928294ebffbcc87a0da283, type: 3}
+  winMusic: {fileID: 8300000, guid: 71fe4e66b96264943a81a8d7e6e71128, type: 3}
 --- !u!58 &468314426
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1475,6 +1477,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   boss: {fileID: 468314424}
+  ChickenBoom: {fileID: 7227644613669095927, guid: 231d79feaff4a434482c54d954280be3,
+    type: 3}
   spline: {fileID: 152141163}
 --- !u!1 &702947879
 GameObject:
@@ -1709,7 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 2552900327754607699, guid: 2581c237c4177a643b6f2f6706c3ccb1, type: 3}
   chicken: {fileID: 542270138}
-  shootLaser: {fileID: 0}
+  shootLaser: {fileID: 8300000, guid: 22f9448f787251d4ea6178476935e91c, type: 3}
 --- !u!114 &1202672073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,7 +1838,7 @@ RectTransform:
   m_Children:
   - {fileID: 14569600}
   m_Father: {fileID: 316485698}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1994,6 +1998,137 @@ MonoBehaviour:
     type: 3}
   AmmoInstance: {fileID: 7909099235576302883, guid: c4dc68c829ed200409dd8c3940252673,
     type: 3}
+--- !u!1 &2006757043
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006757044}
+  - component: {fileID: 2006757047}
+  - component: {fileID: 2006757046}
+  - component: {fileID: 2006757045}
+  m_Layer: 5
+  m_Name: WinCard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2006757044
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006757043}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6, y: 4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 316485698}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2006757045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006757043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2006757046}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2074277282}
+        m_MethodName: WinCardClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2006757046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006757043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 09331773db4dda24e89cad8392f4ff0d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &2006757047
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006757043}
+  m_CullTransparentMesh: 0
 --- !u!1 &2037759042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074277281}
   - component: {fileID: 2074277282}
+  - component: {fileID: 2074277283}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -2081,20 +2217,116 @@ MonoBehaviour:
   asteroidMaxRepeat: 1.2
   AsteroidDirection: {x: 0, y: -3}
   PowerupDirection: {x: 0, y: -2}
+  BombDirection: {x: 0, y: -6}
   spawner: {fileID: 1836049159}
   welcomeCard: {fileID: 310445780}
   instructionsCard: {fileID: 90430286}
   gameOverCard: {fileID: 9425267}
-  WinCard: {fileID: 0}
+  WinCard: {fileID: 2006757043}
   spaceChicken: {fileID: 542270145}
-  HealthBar: {fileID: 0}
+  HealthBar: {fileID: 1328012644}
   boss: {fileID: 468314424}
-  gameover: {fileID: 0}
-  ChickenBoom: {fileID: 0}
+  bossScript: {fileID: 468314425}
   scoreText: {fileID: 486503022}
-  bgMusic: {fileID: 0}
-  playerHit: {fileID: 0}
-  pickupSound: {fileID: 0}
+  bgMusic: {fileID: 8300000, guid: f8c1f71a57f8e9c438c959f18546c3bb, type: 3}
+  playerHit: {fileID: 8300000, guid: 48a56f962d48edc45a00d2886af3ad32, type: 3}
+  pickupSound: {fileID: 8300000, guid: 2af5397d699e84e498bb25239bcca98e, type: 3}
+--- !u!82 &2074277283
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074277280}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.115
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 202
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2110231901
 GameObject:
   m_ObjectHideFlags: 0
