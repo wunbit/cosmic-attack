@@ -29,7 +29,7 @@ public class GameControl : MonoBehaviour
     public GameObject WinCard;
     public SpaceChickenScript spaceChicken;
     public GameObject HealthBar;
-    //public GameObject boss;
+    public GameObject boss;
     public GameObject gameover;
     public GameObject ChickenBoom;
     public Text scoreText;
@@ -73,7 +73,7 @@ private void StartGame()
         {
             WinCard.SetActive(false);
         }
-        //boss.SetActive(false);
+        boss.SetActive(false);
         noboss = true;
         if(HealthBar)
         {

@@ -40,7 +40,6 @@ public class BossScript : MonoBehaviour
             HealthBarScript.health -= 20f;
             Instantiate(BoomLittle, this.transform.position, Quaternion.identity);
             col.gameObject.SetActive(false);
-            
 
             if (HealthBarScript.health <= 0)
             {
@@ -64,7 +63,6 @@ public class BossScript : MonoBehaviour
                 print("BOSS GONE!");
             }
         }
-        
     }
 
     void DestroyBadGuys()
@@ -87,4 +85,4 @@ public class BossScript : MonoBehaviour
         CancelInvoke();
     }
 }
- */
+*/
