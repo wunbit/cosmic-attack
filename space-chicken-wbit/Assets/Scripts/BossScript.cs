@@ -1,25 +1,25 @@
-﻿/*
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossScript : MonoBehaviour
 {
-     public GameObject bomb;
+    public GameObject bomb;
     public float initialDelay;
     public float repeatDelay;
     public GameObject BoomLittle;
     public GameObject BoomBig;
     public GameObject HealthBar;
     private GameObject[] BadGuys;
-    public GameObject spawner;
-    public GameObject GameManager;
+    public GameObject SpawnerScript;
+    public GameObject GameControl;
     public AudioClip bossHit;
     public AudioClip bossDestroyed;
 
     void OnEnable()
     {
-        spawner = GameObject.Find("Spawner");
+        SpawnerScript = GameObject.Find("SpawnerScript");
         BeginInvoke();
         HealthBar.SetActive(true);
     }
@@ -51,13 +51,13 @@ public class BossScript : MonoBehaviour
                 EndInvoke();
                 //Time.timeScale = 0.0f;
                 DestroyBadGuys();
-                if(GameManager)
+                if(GameControl)
                 {
-                    GameManager.GetComponent<GameManager>().WinCard.SetActive(true);
+                    GameControl.GetComponent<GameControl>().WinCard.SetActive(true);
                 }
-                if (spawner)
+                if (SpawnerScript)
                 {
-                    spawner.GetComponent<Spawner>().StopSpawning();
+                    SpawnerScript.GetComponent<SpawnerScript>().StopSpawning();
                 }
                 gameObject.SetActive(false);
                 print("BOSS GONE!");
@@ -85,4 +85,3 @@ public class BossScript : MonoBehaviour
         CancelInvoke();
     }
 }
-*/
